@@ -1,0 +1,94 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans min-h-screen select-none overflow-x-hidden transition-colors duration-500;
+  }
+}
+
+/* Custom Glassmorphism styles matching the original design */
+.glass-shell {
+  background: rgba(13, 20, 36, 0.42);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.55),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.light .glass-shell {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15),
+              inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.light .glass-pill {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* 3D Card Tilt Container */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.tilt-card {
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+/* Handwritten Sticky Note Texture */
+.sticky-note {
+  background: #fbf0b9;
+  background-image: linear-gradient(180deg, #fdf6cc 0%, #f7e8a4 100%);
+  box-shadow: -4px 6px 16px rgba(0, 0, 0, 0.35),
+              0 1px 3px rgba(0, 0, 0, 0.12);
+  transform: rotate(3deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sticky-note:hover {
+  transform: rotate(0deg) scale(1.04) translateY(-4px);
+  box-shadow: -6px 12px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* Neon Explore Button Glow */
+.explore-glow-btn {
+  position: relative;
+  background: rgba(18, 26, 38, 0.6);
+  border: 1.5px solid rgba(132, 204, 22, 0.8);
+  box-shadow: 0 0 20px -3px rgba(132, 204, 22, 0.5),
+              inset 0 0 12px rgba(132, 204, 22, 0.25);
+}
+
+.explore-glow-btn:hover {
+  border-color: #bef264;
+  box-shadow: 0 0 30px 2px rgba(163, 230, 53, 0.8),
+              inset 0 0 20px rgba(163, 230, 53, 0.4);
+}
+
+/* Custom Scrollbar for inner views and modals */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+}
